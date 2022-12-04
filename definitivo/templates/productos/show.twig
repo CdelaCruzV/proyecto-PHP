@@ -1,0 +1,49 @@
+{% extends "layouts/admin.twig" %}
+
+{% block title %} PRODUCTOS | SHOW {% endblock %}
+
+{% block content %} 
+<br>
+    <!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center {{ producto.id }}" style="align-items: center;">
+						<div class="single-product-item">
+							<div class="product-image">
+								<a href="#" data-bs-toggle="modal" data-bs-target="#Modal"><img style="width: 250px" src="{{ producto.imagen }}" alt=""></a>
+							</div>
+							<h3>{{ producto.nombre }}</h3>
+							<p>{{ producto.descripcion}}</p>
+							<p class="product-price">
+								<span>Precio por Unidad</span>
+								{{ producto.precio }}
+								€</p>
+							<p class="product-price">
+								<span>Cantidad diposnible</span>
+								{{ producto.stock }}
+								<span>unidades restantes</span>
+							</p>
+							<div class="single-product-form">
+							<a href="{{ URL }}?controller=productos&action=index" class="text-decoration-none"> Volver</a>
+						</div>
+						</div>
+					</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- end single product -->
+
+	<!-- Modal -->
+<div class="modal fade" id="Modal">
+  <div class="modal-dialog modal-dialog-centered">      
+      <div class="modal-content">
+        <img style="width: 500px" src="{{ producto.imagen }}">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

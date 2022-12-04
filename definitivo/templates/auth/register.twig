@@ -1,0 +1,43 @@
+{% extends "layouts/public.twig" %}
+
+{% block title %}Registro
+{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block content %}
+<br><h3 style="text-align:center;">Registro</h3>
+	<div class="row">
+		<div class="col"></div>
+		<div class="col">
+			<form action="{{ URL }}?controller=users&action=save" method="POST">
+				<div class="form-group">
+					<label>Nombre</label>
+					<input type="text" name="nombre" class="form-control" placeholder="Nombre">
+				</div>
+				<br>
+				<div class="form-group">
+					<label>Apellidos</label>
+					<input type="text" name="apellidos" class="form-control" placeholder="Apellidos">
+				</div>
+				<br>
+				<div class="form-group">
+					<label>E-mail</label>
+					<input type="email" name="email" class="form-control" placeholder="E-mail">
+					<br>
+				</div>
+				<div class="form-group">
+					<label>Contraseña</label>
+					<input type="password" name="password" class="form-control" placeholder="Contraseña">
+				</div>
+				<br>
+				<button type="submit" class="btn btn-primary">Enviar</button>
+			</form>
+		</div>
+		<div class="col"></div>
+	</div><br>
+
+
+{% endblock %}
+
+{% block script %}{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "layouts/private.twig" %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block content %}
+	<!-- products -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<br>
+					{# <div class="product-filters">
+															                        <ul>
+															                            <li class="active" data-filter="*">Todos</li>
+															                            {% for u in categorias %}
+															                                <li data-filter=".{{ u.id }}">{{ u.nombre }}</li>
+															                            {% endfor %}
+															                        </ul>
+															                    </div> #}
+					<div class="product-filters">
+						<div class="btn-group product-filters" role="group">
+							<button type="button" data-filter="*" class="btn btn-primary active">Todos</button>
+							{% for u in categorias %}
+								<button type="button" class="btn btn-primary" data-filter=".{{ u.id }}">{{ u.nombre }}</button>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<br>
+
+			<div class="row product-lists">
+				{% for u in productos %}
+					<br>
+					<div class="col-lg-4 col-md-6 border rounded text-center {{ u.id }}" style="align-items: center;">
+						<div class="single-product-item">
+							<div class="product-image">
+								<a href="{{ URL }}?controller=productos&action=show&id={{ u.id }}"><img style="width: 250px" src="{{ u.imagen }}" alt=""></a>
+							</div>
+							<h3>{{ u.nombre }}</h3>
+							<p>{{ u.descripcion}}</p>
+							<p class="product-price">
+								<span>Precio por Unidad</span>
+								{{ u.precio }}
+								€</p>
+							<p class="product-price">
+								<span>Cantidad diposnible</span>
+								{{ u.stock }}
+								<span>unidades restantes</span>
+							</p>
+							<a href="{{ URL }}?controller=carrito&action=agregar&id={{ u.id }}" class="text-decoration-none">
+								<i class="fa-shopping-cart"></i>
+								Agregar</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<br><br>
+	</div>
+	<!-- end products -->
+
+{% endblock %}
+
+{% block script %}{% endblock %}

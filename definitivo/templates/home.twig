@@ -1,0 +1,84 @@
+{% extends "layouts/admin.twig" %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block style %}{% endblock %}
+
+{% block content %}
+	<br>
+	<!-- usuarios -->
+	<div class="latest-news mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 border rounded">
+					<div class="single-latest-news">
+						<a href="{{ URL }}?controller=users&action=index">
+							<div class="latest-news-bg news-bg-1 text-center">
+								<i class="fas fa-user" style="font-size: 200px; color: black"></i>
+							</div>
+						</a>
+						<div class="news-text-box">
+							<h3>
+								<a href="{{ URL }}?controller=users&action=index" class="text-decoration-none">Usuarios</a>
+							</h3>
+
+							<h1>
+								<i class="bi bi-file-person"></i>
+							</h1>
+							<p class="excerpt">Administración de usuarios</p>
+							<a href="{{ URL }}?controller=users&action=index" class="text-decoration-none">Ver más
+								<i class="fas fa-angle-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 border rounded">
+					<div class="single-latest-news">
+						<a href="{{ URL }}?controller=productos&action=index">
+							<div class="latest-news-bg news-bg-1 text-center">
+								<i class="fas fa-user" style="font-size: 200px; color: black"></i>
+							</div>
+						</a>
+						<div class="news-text-box">
+							<h3>
+								<a href="{{ URL }}?controller=productos&action=index" class="text-decoration-none">Productos</a>
+							</h3>
+							<h1>
+								<i class="bi bi-basket-fill"></i>
+							</h1>
+							<p class="excerpt">Administración de productos</p>
+							<a href="{{ URL }}?controller=productos&action=index" class="text-decoration-none">Ver más
+								<i class="fas fa-angle-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 border rounded">
+					<div class="single-latest-news">
+						<a href="{{ URL }}?controller=categorias&action=index">
+							<div class="latest-news-bg news-bg-1 text-center">
+								<i class="fas fa-user" style="font-size: 200px; color: black"></i>
+							</div>
+						</a>
+						<div class="news-text-box">
+							<h3>
+								<a href="{{ URL }}?controller=categorias&action=index" class="text-decoration-none">Categorias</a>
+							</h3>
+
+							<h1>
+								<i class="bi bi-bookmarks-fill"></i>
+							</h1>
+							<p class="excerpt">Administración de categorias</p>
+							<a href="{{ URL }}?controller=categorias&action=index" class="text-decoration-none">Ver más
+								<i class="fas fa-angle-right"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+
+{% endblock %}
